@@ -1,1 +1,54 @@
+package com.cc.java;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class App {
+
+        public static void main (String[] args) throws IOException {
+            String food = "";
+            String drink = "";
+            System.out.println("Guten Tag bei MD, Ihre Bestellung bitte!");
+            System.out.println("Hamburger (1), Cheeseburger (2) oder Chilliburger (3) ?");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            int burgerSelection = Integer.parseInt(reader.readLine());
+            switch (burgerSelection) {
+                case 1:
+                    food = "Hamburger";
+                    break;
+                case 2:
+                    food = "Cheeseburger";
+                    break;
+                case 3:
+                    food = "Chilliburger";
+                    break;
+            }
+            System.out.println("Möchten Sie ein Getränk dazu bestellen? (j/n)");
+            String orderDrink = reader.readLine();
+            if (orderDrink.equalsIgnoreCase("j")) {
+                System.out.println("Cola (1), Fanta (2), Sprite (3)?");
+                int drinkSelection = Integer.parseInt(reader.readLine());
+                switch (drinkSelection) {
+                    case 1:
+                        drink = "Cola";
+                        break;
+                    case 2:
+                        drink = "Fanta";
+                        break;
+                    case 3:
+                        drink = "Sprite";
+                        break;
+                }
+                System.out.println("Hier ist Ihre Bestellung: " + food + " und " + drink);
+            } else {
+                System.out.println("Hier ist Ihre Bestellung: " + food);
+            }
+            System.out.println("Vielen Dank, und Auf Wiedersehen!");
+        }
+    }
+
+
+
 
